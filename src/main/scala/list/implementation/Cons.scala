@@ -7,8 +7,9 @@ case class Cons (head: Int, tail: IntList) extends SinglyLinkedIntList :
   override def isEmpty = false
 
   override def get(index: Int): Int = index match
-  case 0 => head
-  case i => tail.get(i - 1)
+    case 0 => head
+    case i if i > 0 => tail.get(i - 1)
+    case _ => throw new IndexOutOfBoundsException()
 
   override def append(elem: Int): IntList = Cons(head, tail.append(elem))
 
