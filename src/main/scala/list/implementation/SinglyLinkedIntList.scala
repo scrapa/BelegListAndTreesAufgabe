@@ -4,6 +4,12 @@ import list.traits.IntList
 
 object SinglyLinkedIntList:
 
+  /**
+    * Creates a singly linked list containing the given values in order.
+    *
+    * @param xs the values to put in the list
+    * @return the resulting list
+    */
   def apply(xs: Int*): SinglyLinkedIntList = xs match
     case Seq() => Empty
     case _ => Cons(xs.head, SinglyLinkedIntList(xs.tail*))

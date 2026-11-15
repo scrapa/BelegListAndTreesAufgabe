@@ -4,6 +4,13 @@ import tree.traits.IntTree
 
 object BinaryTree:
 
+  /**
+    * Builds a binary search tree by inserting the values from left to right.
+    * Duplicate values are ignored.
+    *
+    * @param xs the values to insert
+    * @return the resulting binary search tree
+    */
   def apply(xs: Int*): BinaryTree =
     xs.foldLeft[BinaryTree](Empty)((tree, elem) => tree.insert(elem))
 
@@ -11,6 +18,12 @@ abstract class BinaryTree extends IntTree:
 
   override def insert(elem: Int): BinaryTree
 
+  /**
+    * Finds the smallest element in this tree's right subtree.
+    *
+    * @return the successor node of this tree's root
+    * @throws Error if this tree is empty or has no right subtree
+    */
   def findSuccessor: BinaryTree =
     def findMin(node: IntTree): BinaryTree = node match
       case Empty => throw new Error("Empty subtree has no minimum")
