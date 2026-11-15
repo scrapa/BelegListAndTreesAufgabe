@@ -6,7 +6,7 @@ case object Empty extends BinaryTree :
 
   override def root: Int = throw new IllegalArgumentException("root.nil")
 
-  override def insert(elem:Int):IntTree= NonEmpty(elem, Empty, Empty)
+  override def insert(elem: Int): BinaryTree = NonEmpty(elem, Empty, Empty)
 
   override def isEmpty = true
 

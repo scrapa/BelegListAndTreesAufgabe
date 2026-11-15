@@ -1,0 +1,20 @@
+# Scala / sbt build output
+target/
+project/target/
+project/project/
+
+# Scala tooling
+.bsp/
+.bloop/
+.metals/
+.scala-build/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Local assignment archive and logs
+*.zip
+*.log
